@@ -26,8 +26,24 @@ class Item:
 
     def apply_increment(self, increment_value):
         self.__price = self.__price + self.__price * increment_value
+
+    def __connect(self, smpt_server):
+        pass
+
+    def __prepare_body(self):
+        return f"""
+        Hello someone.
+        We have {self.name} {self.quantity} times.
+        """
     
-    
+    def __send(self):
+        pass
+
+    def send_email(self):
+        self.__connect('')
+        self.__prepare_body()
+        self.__send()
+
     @property
     # Property Decorator = Read-Only Attribute
     def name(self):
